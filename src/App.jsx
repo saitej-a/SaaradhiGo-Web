@@ -55,23 +55,23 @@ function App() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-black tracking-tighter uppercase cursor-default">
+          <div className="text-xl md:text-2xl font-black tracking-tighter uppercase cursor-default">
             Saaradhi<span className="text-primary">Go</span>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary text-xl">language</span>
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="flex items-center gap-2 md:gap-3">
+              <span className="material-symbols-outlined text-primary text-base md:text-xl">language</span>
               {t.navLanguageOptions.map((opt) => (
                 <button
                   key={opt.id}
                   onClick={() => handleLanguageSelect(opt.id)}
-                  className="text-sm font-medium hover:text-primary transition-colors border-r last:border-r-0 border-slate-300 dark:border-zinc-700 pr-3 last:pr-0"
+                  className="text-xs md:text-sm font-medium hover:text-primary transition-colors border-r last:border-r-0 border-slate-300 dark:border-zinc-700 pr-2 md:pr-3 last:pr-0"
                 >
                   {opt.label}
                 </button>
               ))}
             </div>
-            <button className="bg-primary hover:bg-primary/90 text-black px-6 py-2 rounded-full font-bold transition-all text-sm shadow-[0_0_15px_rgba(255,215,0,0.3)]">
+            <button className="bg-primary hover:bg-primary/90 text-black px-3 py-1.5 md:px-6 md:py-2 rounded-full font-bold transition-all text-xs md:text-sm shadow-[0_0_15px_rgba(255,215,0,0.3)]">
               {t.joinNow}
             </button>
           </div>
@@ -105,18 +105,18 @@ function App() {
           }}
         />
 
-        <div className="relative z-10 max-w-4xl text-center space-y-8">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full text-primary animate-pulse">
-            <span className="relative flex h-3 w-3">
+        <div className="relative z-10 max-w-4xl text-center space-y-6 md:space-y-8 mt-20 md:mt-0">
+          <div className="inline-flex items-center gap-2.5 bg-primary/10 border border-primary/30 px-5 py-2 md:px-6 md:py-3 rounded-full text-primary animate-pulse shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+            <span className="relative flex h-3.5 w-3.5 md:h-4 md:w-4">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 md:h-4 md:w-4 bg-primary"></span>
             </span>
-            <span className="text-sm font-bold tracking-wide">{t.driverSpots}</span>
+            <span className="text-base md:text-lg font-black tracking-wide">{t.driverSpots}</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+          <h1 className="text-4xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
             {t.heroTitlePart1} <span className="text-primary italic drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">{t.heroTitleHighlight}</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto">
             {t.heroSubtitle}
           </p>
           <p className="text-sm md:text-base text-primary/80 font-bold italic tracking-wide mt-4 mb-6 py-2 px-6 border-y border-primary/20 bg-primary/5 inline-block mx-auto rounded-lg">
@@ -136,14 +136,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="relative p-8 bg-white dark:bg-card-dark rounded-2xl border-l-4 border-primary shadow-sm">
             <span className="material-symbols-outlined text-primary/40 text-6xl absolute top-4 right-4">format_quote</span>
-            <p className="text-xl md:text-2xl font-bold italic text-slate-800 dark:text-slate-200">
+            <p className="text-lg md:text-2xl font-bold italic text-slate-800 dark:text-slate-200">
               {t.quote1}
             </p>
             <p className="mt-4 font-black text-sm uppercase tracking-widest text-primary">{t.quote1Author}</p>
           </div>
           <div className="relative p-8 bg-white dark:bg-card-dark rounded-2xl border-l-4 border-primary shadow-sm">
             <span className="material-symbols-outlined text-primary/40 text-6xl absolute top-4 right-4">format_quote</span>
-            <p className="text-xl md:text-2xl font-bold italic text-slate-800 dark:text-slate-200">
+            <p className="text-lg md:text-2xl font-bold italic text-slate-800 dark:text-slate-200">
               {t.quote2}
             </p>
             <p className="mt-4 font-black text-sm uppercase tracking-widest text-primary">{t.quote2Author}</p>
@@ -152,26 +152,26 @@ function App() {
       </div>
 
       {/* The Offer */}
-      <section className="py-24 px-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-16 tracking-tight">SAARADHI<span className="text-primary">{t.edgeTitleHighlight}</span></h2>
+      <section className="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-5xl font-black text-center mb-10 md:mb-16 tracking-tight">SAARADHI<span className="text-primary">{t.edgeTitleHighlight}</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 rounded-2xl bg-white dark:bg-card-dark border-2 border-slate-200 dark:border-zinc-800 glow-border transition-all group">
             <span className="material-symbols-outlined text-5xl text-primary mb-6 group-hover:scale-110 transition-transform block">payments</span>
-            <h3 className="text-2xl font-black mb-4">{t.feature1Title}</h3>
+            <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-4">{t.feature1Title}</h3>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               {t.feature1Desc}
             </p>
           </div>
           <div className="p-8 rounded-2xl bg-white dark:bg-card-dark border-2 border-slate-200 dark:border-zinc-800 glow-border transition-all group">
             <span className="material-symbols-outlined text-5xl text-primary mb-6 group-hover:scale-110 transition-transform block">account_balance_wallet</span>
-            <h3 className="text-2xl font-black mb-4">{t.feature2Title}</h3>
+            <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-4">{t.feature2Title}</h3>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               {t.feature2Desc}
             </p>
           </div>
           <div className="p-8 rounded-2xl bg-white dark:bg-card-dark border-2 border-slate-200 dark:border-zinc-800 glow-border transition-all group">
             <span className="material-symbols-outlined text-5xl text-primary mb-6 group-hover:scale-110 transition-transform block">map</span>
-            <h3 className="text-2xl font-black mb-4">{t.feature3Title}</h3>
+            <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-4">{t.feature3Title}</h3>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               {t.feature3Desc}
             </p>
@@ -180,9 +180,9 @@ function App() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-primary text-black">
+      <section className="py-16 md:py-24 bg-primary text-black">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter">{t.stepsTitle}</h2>
+          <h2 className="text-3xl md:text-6xl font-black mb-10 md:mb-16 tracking-tighter">{t.stepsTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
               { num: '01', title: t.step1Title, desc: t.step1Desc },
@@ -194,10 +194,10 @@ function App() {
                   <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="22" ry="22" fill="none" stroke="currentColor" strokeWidth="4"
                     pathLength="100" className="draw-border text-black" />
                 </svg>
-                <div className="relative z-10 space-y-4">
-                  <span className="text-8xl font-black opacity-30 block">{step.num}</span>
-                  <h3 className="text-3xl font-black">{step.title}</h3>
-                  <p className="font-bold text-lg">{step.desc}</p>
+                <div className="relative z-10 space-y-2 md:space-y-4">
+                  <span className="text-5xl md:text-8xl font-black opacity-30 block">{step.num}</span>
+                  <h3 className="text-xl md:text-3xl font-black">{step.title}</h3>
+                  <p className="font-bold text-sm md:text-lg">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -205,14 +205,13 @@ function App() {
         </div>
       </section>
 
-      {/* Sign-Up Form */}
-      <section className="py-24 px-4 bg-background-light dark:bg-background-dark relative z-10" id="signup">
-        <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-zinc-800 shadow-2xl relative z-20">
-          <h2 className="text-3xl md:text-4xl font-black mb-8">{t.formTitle}</h2>
+      <section className="py-16 md:py-24 px-4 bg-background-light dark:bg-background-dark relative z-10" id="signup">
+        <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 dark:border-zinc-800 shadow-2xl relative z-20">
+          <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8">{t.formTitle}</h2>
           <form className="space-y-10" onSubmit={handleSubmit}>
             {/* Personal Details */}
             <div className="space-y-6">
-              <h3 className="text-xl font-bold border-l-4 border-primary pl-4 uppercase tracking-widest text-primary">{t.personalDetails}</h3>
+              <h3 className="text-lg md:text-xl font-bold border-l-4 border-primary pl-3 md:pl-4 uppercase tracking-widest text-primary">{t.personalDetails}</h3>
               <div className="grid gap-4">
                 <input
                   type="text"
@@ -223,17 +222,17 @@ function App() {
                   className="w-full h-14 bg-slate-100 dark:bg-zinc-800 border-none rounded-xl px-6 font-bold text-lg focus:ring-2 focus:ring-primary"
                   placeholder={t.fullNamePlaceholder}
                 />
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-2">
                   <input
                     type="tel"
                     name="mobile"
                     value={formData.mobile}
                     onChange={handleChange}
                     required
-                    className="flex-1 h-14 bg-slate-100 dark:bg-zinc-800 border-none rounded-xl px-6 font-bold text-lg focus:ring-2 focus:ring-primary"
+                    className="w-full sm:flex-1 h-14 bg-slate-100 dark:bg-zinc-800 border-none rounded-xl px-6 font-bold text-lg focus:ring-2 focus:ring-primary"
                     placeholder={t.mobilePlaceholder}
                   />
-                  <button type="button" className="bg-primary/20 text-primary border border-primary/40 px-6 rounded-xl font-black hover:bg-primary/30 transition-colors w-28 text-sm">
+                  <button type="button" className="w-full sm:w-32 h-14 bg-primary/20 text-primary border border-primary/40 rounded-xl font-black hover:bg-primary/30 transition-colors text-sm">
                     {t.getOtp}
                   </button>
                 </div>
@@ -248,7 +247,7 @@ function App() {
                         key={lang}
                         type="button"
                         onClick={() => handleLanguageSelect(lang)}
-                        className={`px-6 py-2 rounded-full border-2 font-bold ${formData.language === lang
+                        className={`flex-1 sm:flex-none text-center px-4 md:px-6 py-2 rounded-full border-2 font-bold text-sm md:text-base ${formData.language === lang
                           ? 'border-primary bg-primary text-black'
                           : 'border-slate-300 dark:border-zinc-700'
                           }`}
@@ -275,7 +274,7 @@ function App() {
 
             {/* Vehicle Information */}
             <div className="space-y-6">
-              <h3 className="text-xl font-bold border-l-4 border-primary pl-4 uppercase tracking-widest text-primary">{t.vehicleInfo}</h3>
+              <h3 className="text-lg md:text-xl font-bold border-l-4 border-primary pl-3 md:pl-4 uppercase tracking-widest text-primary">{t.vehicleInfo}</h3>
               <div className="grid grid-cols-3 gap-4">
                 {[
                   { id: 'Auto', icon: 'electric_rickshaw', label: t.auto },
@@ -354,26 +353,26 @@ function App() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-4 bg-slate-100 dark:bg-zinc-900">
+      <section className="py-16 md:py-24 px-4 bg-slate-100 dark:bg-zinc-900">
         <div className="max-w-3xl mx-auto space-y-12">
-          <h2 className="text-4xl font-black text-center">{t.faqTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-center">{t.faqTitle}</h2>
           <div className="space-y-4">
             <details className="group bg-white dark:bg-background-dark border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 open:ring-2 open:ring-primary transition-all">
-              <summary className="flex items-center justify-between font-black text-xl cursor-pointer list-none">
+              <summary className="flex items-center justify-between font-black text-lg md:text-xl cursor-pointer list-none">
                 {t.faq1Question}
                 <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
               </summary>
               <p className="mt-4 text-slate-600 dark:text-slate-400 font-medium">{t.faq1Answer}</p>
             </details>
             <details className="group bg-white dark:bg-background-dark border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 open:ring-2 open:ring-primary transition-all">
-              <summary className="flex items-center justify-between font-black text-xl cursor-pointer list-none">
+              <summary className="flex items-center justify-between font-black text-lg md:text-xl cursor-pointer list-none">
                 {t.faq2Question}
                 <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
               </summary>
               <p className="mt-4 text-slate-600 dark:text-slate-400 font-medium">{t.faq2Answer}</p>
             </details>
             <details className="group bg-white dark:bg-background-dark border border-slate-200 dark:border-zinc-800 rounded-2xl p-6 open:ring-2 open:ring-primary transition-all">
-              <summary className="flex items-center justify-between font-black text-xl cursor-pointer list-none">
+              <summary className="flex items-center justify-between font-black text-lg md:text-xl cursor-pointer list-none">
                 {t.faq3Question}
                 <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
               </summary>
@@ -411,7 +410,7 @@ function App() {
           </div>
           <div className="space-y-6">
             <h4 className="font-black text-primary uppercase tracking-widest text-sm">{t.footerLanguage}</h4>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleLanguageSelect('English')}
                 className={`${langCode === 'en' ? 'bg-primary text-black' : 'bg-slate-200 dark:bg-zinc-800'} px-4 py-2 rounded-lg font-black text-sm transition-colors`}
