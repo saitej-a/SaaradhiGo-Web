@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { translations } from './translations';
 
 function App() {
@@ -12,6 +12,20 @@ function App() {
     model: '',
     registration: ''
   });
+
+  const [spotsClaimed, setSpotsClaimed] = useState(() => {
+    // Starting date to calculate offset deterministically.
+    const startTime = new Date('2026-03-08T00:00:00Z').getTime();
+    const diffMinutes = Math.max(0, Math.floor((Date.now() - startTime) / 60000));
+    return 847 + Math.floor(diffMinutes / 5);
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSpotsClaimed(prev => prev + 1);
+    }, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const [heroMouse, setHeroMouse] = useState({ x: 0, y: 0 });
 
@@ -60,7 +74,6 @@ function App() {
           </div>
           <div className="flex items-center gap-2 md:gap-4">
             <div className="flex items-center gap-2 md:gap-3">
-              <span className="material-symbols-outlined text-primary text-base md:text-xl">language</span>
               {t.navLanguageOptions.map((opt) => (
                 <button
                   key={opt.id}
@@ -111,7 +124,7 @@ function App() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3.5 w-3.5 md:h-4 md:w-4 bg-primary"></span>
             </span>
-            <span className="text-base md:text-lg font-black tracking-wide">{t.driverSpots}</span>
+            <span className="text-base md:text-lg font-black tracking-wide">{t.driverSpots.replace('847', spotsClaimed)}</span>
           </div>
           <h1 className="text-4xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
             {t.heroTitlePart1} <span className="text-primary italic drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">{t.heroTitleHighlight}</span>
