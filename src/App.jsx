@@ -351,7 +351,45 @@ function App() {
 
       <section className="py-16 md:py-24 px-4 bg-background-light dark:bg-background-dark relative z-10" id="signup">
         <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 rounded-3xl p-6 sm:p-8 md:p-12 border border-slate-200 dark:border-zinc-800 shadow-2xl relative z-20">
-          <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8">{t.formTitle}</h2>
+          <h2 className="text-2xl md:text-4xl font-black mb-8 md:mb-10 text-center">{t.formTitle}</h2>
+          
+          {/* Step Indicator */}
+          {step !== 'SUCCESS' && (
+            <div className="mb-10 md:mb-12">
+              <div className="flex items-center justify-between relative max-w-md mx-auto">
+                {/* Background Line */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 md:h-1.5 bg-slate-200 dark:bg-zinc-800 -z-10 rounded-full"></div>
+                {/* Progress Line */}
+                <div 
+                  className="absolute left-0 top-1/2 -translate-y-1/2 h-1 md:h-1.5 bg-primary -z-10 rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(255,215,0,0.3)]"
+                  style={{ 
+                    width: `${(['OTP', 'VERIFY', 'PROFILE', 'VEHICLE'].indexOf(step) / 3) * 100}%` 
+                  }}
+                ></div>
+                
+                {['OTP', 'VERIFY', 'PROFILE', 'VEHICLE'].map((s, idx) => {
+                  const currentStepIndex = ['OTP', 'VERIFY', 'PROFILE', 'VEHICLE'].indexOf(step);
+                  const isCompleted = idx < currentStepIndex;
+                  const isActive = idx === currentStepIndex;
+                  const isGold = isCompleted || isActive;
+                  
+                  return (
+                    <div key={s} className="relative z-10 bg-white dark:bg-zinc-900 px-2">
+                      <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black text-sm md:text-base border-2 transition-all duration-500
+                        ${isGold 
+                          ? 'bg-primary text-black border-primary shadow-[0_0_15px_rgba(255,215,0,0.4)] scale-110' 
+                          : 'bg-slate-50 dark:bg-zinc-800 text-slate-400 border-slate-200 dark:border-zinc-700'
+                        }`}
+                      >
+                        {isCompleted ? <span className="material-symbols-outlined font-black text-sm md:text-base">check</span> : idx + 1}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <form className="space-y-10" onSubmit={
             step === 'OTP' ? handleRequestOTP :
               step === 'VERIFY' ? handleVerifyOTP :
