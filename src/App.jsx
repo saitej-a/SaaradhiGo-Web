@@ -197,8 +197,8 @@ function App() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-default group">
-            <img src={logo} alt="SaaradhiGo Logo" className="w-10 h-10 rounded-xl shadow-lg border border-primary/20 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center md:gap-2 cursor-default group">
+            <img src={logo} alt="SaaradhiGo Logo" className="hidden md:block w-10 h-10 rounded-xl shadow-lg border border-primary/20 group-hover:scale-110 transition-transform" />
             <div className="text-xl md:text-2xl font-black tracking-tighter uppercase">
               Saaradhi<span className="text-primary">Go</span>
             </div>
