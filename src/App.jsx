@@ -105,6 +105,10 @@ function App() {
         : `+91${formData.phone_number}`;
       const res = await api.login(formattedPhone, formData.otp);
       if (res.status === 'success') {
+        if (res.data.user && res.data.user.full_name) {
+          const currentLangCode = formData.language === 'English' ? 'en' : formData.language.includes('Telugu') ? 'te' : 'hi';
+          throw new Error(translations[currentLangCode].alreadyRegistered);
+        }
         setToken(res.data.token);
         localStorage.setItem('driver_token', res.data.token);
         setStep('PROFILE');

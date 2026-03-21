@@ -61,6 +61,7 @@ export const translations = {
         nextStep: "CONTINUE",
         uploadAvatar: "Upload Photo",
         registerNow: "REGISTER NOW",
+        alreadyRegistered: "You have already signed up and cannot register again.",
 
         faqTitle: "Frequently Asked Questions",
         faq1Question: "How can it be zero commission?",
@@ -144,6 +145,7 @@ export const translations = {
         nextStep: "కొనసాగించండి",
         uploadAvatar: "ఫోటో అప్‌లోడ్ చేయండి",
         registerNow: "ఇప్పుడే నమోదు చేసుకోండి",
+        alreadyRegistered: "మీరు ఇప్పటికే నమోదు చేసుకున్నారు మరియు మళ్లీ నమోదు చేసుకోలేరు.",
 
         faqTitle: "తరచుగా అడిగే ప్రశ్నలు",
         faq1Question: "జీరో కమీషన్ ఎలా సాధ్యం?",
@@ -227,6 +229,7 @@ export const translations = {
         nextStep: "जारी रखें",
         uploadAvatar: "फोटो अपलोड करें",
         registerNow: "अभी रजिस्टर करें",
+        alreadyRegistered: "आप पहले ही साइन अप कर चुके हैं और दोबारा पंजीकरण नहीं कर सकते।",
 
         faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
         faq1Question: "शून्य कमीशन कैसे संभव है?",
